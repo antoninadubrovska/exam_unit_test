@@ -26,11 +26,18 @@ let idCounter = 2002
 
 // Din kod börjar här
 // Du får en funktion att börja med
+// Kom ihåg att börja med testfallet - inte koden
+
 
 function getCartItemCount() {
-	throw new Error('TODO')
+	throw new Error('Not implemented yet')
 }
 
+
+/**
+ * Lägger till en "product" till kundvagnen.
+ * @returns true om produkten lades till, false om parametern inte är ett korrekt objekt
+ */
 function addToCart(newItem) {
 	if( !isProduct(newItem) ) {
 		return false
@@ -45,8 +52,14 @@ function addToCart(newItem) {
 	} else {
 		cart[index].amount++
 	}
+	return true
+}
+
+
+function clearCart() {
+	throw new Error('Not implemented yet')
 }
 
 
 
-export { getCartItemCount, addToCart }
+export { getCartItemCount, addToCart, clearCart }
