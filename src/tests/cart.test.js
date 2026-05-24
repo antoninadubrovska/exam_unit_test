@@ -1,5 +1,5 @@
 // importera här
-import { addToCart, getCartItemCount } from "../cart"
+import { addToCart, getCartItemCount, clearCart} from "../cart"
 
 
 describe('Cart', () => {
@@ -23,6 +23,21 @@ describe('Cart', () => {
 		const itemCountAfter = getCartItemCount()
 
 		expect(itemCountAfter).toBe(itemCountBefore + 1)
+	})
+
+
+	// clearCart 
+
+	test('clearCart tömmer kundvagnen', () => {
+		const product = {
+			id: 1001,
+			name: 'Badanka',
+			price: 500
+		}
+
+		addToCart(product)
+		clearCart()
+		expect(getCartItemCount()).toBe(0)
 	})
 
 
