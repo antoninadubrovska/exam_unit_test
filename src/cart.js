@@ -8,7 +8,7 @@ Tips:
 - om du testar t.ex. removeFromCart får du använda addToCart i början av testet. Den kommer nämligen ha sina egna tester
 
 */
-// function getCartItemCount()
+// function getCartItemCount() // done
 // function getItem(index)
 // function getTotalCartValue()
 // function addToCart(newItem)
@@ -59,9 +59,10 @@ function addToCart(newItem) {
 function clearCart() {
 	// throw new Error('Not implemented yet')
 	cart = []
+	// reset idCounter to initial value
 	idCounter = 2002
 }
 
 
 
-export { getCartItemCount, addToCart, clearCart }
+export { getCartItemCount, addToCart, clearCart, getItem }

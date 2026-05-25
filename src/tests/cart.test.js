@@ -1,5 +1,5 @@
 // importera här
-import { addToCart, getCartItemCount, clearCart} from "../cart"
+import { addToCart, getCartItemCount, clearCart, getItem} from "../cart"
 
 
 describe('Cart', () => {
@@ -27,7 +27,6 @@ describe('Cart', () => {
 
 
 	// clearCart
-
 	test('clearCart tömmer kundvagnen', () => {
 		const product = {
 			id: 1001,
@@ -37,7 +36,7 @@ describe('Cart', () => {
 
 		addToCart(product)
 		clearCart()
-		
+
 		expect(getCartItemCount()).toBe(0)
 	})
 
@@ -53,6 +52,21 @@ describe('Cart', () => {
 		addToCart(product)
 
 		expect(getCartItemCount()).toBe(1)
+	})
+
+	// item exists, correct item returned
+	test('getItem returnerar rätt cart item', () => {
+		const product = {
+			id: 1001,
+			name: 'Badanka',
+			price: 500
+		}
+
+		addToCart(product)
+
+		const result = getItem(0)
+
+		expect(result.item.name).toBe('Badanka')
 	})
 
 
