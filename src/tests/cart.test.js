@@ -70,5 +70,19 @@ describe('Cart', () => {
 	})
 
 
+	test('getTotalCartValue returnerar korrekt totalpris', () => {
+		const product = {
+			id: 1001,
+			name: 'Badanka',
+			price: 500
+		}
+
+		addToCart(product)
+		addToCart(product)
+
+		const total = getTotalCartValue()
+
+		expect(total).toBe(1000)
+	})
 	// -------------------------------------------------- //
 })
