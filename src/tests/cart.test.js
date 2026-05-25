@@ -26,7 +26,7 @@ describe('Cart', () => {
 	})
 
 
-	// clearCart 
+	// clearCart
 
 	test('clearCart tömmer kundvagnen', () => {
 		const product = {
@@ -37,7 +37,22 @@ describe('Cart', () => {
 
 		addToCart(product)
 		clearCart()
+		
 		expect(getCartItemCount()).toBe(0)
+	})
+
+	// Two items of the same product = 1 cart item.
+	test('getCartItemCount returnerar antal olika produkter', () => {
+		const product = {
+			id: 1001,
+			name: 'Badanka',
+			price: 500
+		}
+
+		addToCart(product)
+		addToCart(product)
+
+		expect(getCartItemCount()).toBe(1)
 	})
 
 
