@@ -10,7 +10,7 @@ Tips:
 */
 // function getCartItemCount() // done
 // function getItem(index) // 1 out of 4
-// function getTotalCartValue()
+// function getTotalCartValue() // 1 out of 4
 // function addToCart(newItem)
 // function removeFromCart(itemId)
 // function editCart(itemId, newValues)
@@ -67,6 +67,11 @@ function clearCart() {
 	idCounter = 2002
 }
 
+function getTotalCartValue() {
+	return cart.reduce((sum, cartItem) => {
+		return sum + cartItem.item.price * cartItem.amount
+	}, 0)
+}
 
 
-export { getCartItemCount, addToCart, clearCart, getItem }
+export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue }
