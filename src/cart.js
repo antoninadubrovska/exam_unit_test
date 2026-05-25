@@ -9,7 +9,7 @@ Tips:
 
 */
 // function getCartItemCount() // done
-// function getItem(index)
+// function getItem(index) // 1 out of 4
 // function getTotalCartValue()
 // function addToCart(newItem)
 // function removeFromCart(itemId)
@@ -53,6 +53,10 @@ function addToCart(newItem) {
 		cart[index].amount++
 	}
 	return true
+}
+
+function getItem(index) {
+	return cart[index]
 }
 
 
