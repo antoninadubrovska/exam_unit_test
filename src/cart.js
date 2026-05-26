@@ -11,10 +11,10 @@ Tips:
 // function getCartItemCount() // done
 // function getItem(index) // 1 out of 4
 // function getTotalCartValue() // 1 out of 4
-// function addToCart(newItem)
-// function removeFromCart(itemId)
-// function editCart(itemId, newValues)
-// function clearCart()
+// function addToCart(newItem) // was partially done ..
+// function removeFromCart(itemId) // mutation
+// function editCart(itemId, newValues) // mutation
+// function clearCart() // done
 // -------------------------------------------------- //
 
 import { isCartItem, isProduct } from "./validation.js"
@@ -74,4 +74,6 @@ function getTotalCartValue() {
 }
 
 
-export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue }
+
+
+export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue, removeFromCart }
