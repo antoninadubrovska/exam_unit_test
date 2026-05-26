@@ -84,5 +84,17 @@ function removeFromCart(itemId) {
 	return true
 }
 
+function editCart(itemId, newValues) {
+	const index = cart.findIndex(existingItem => existingItem.id === itemId)
+	if (index === -1) {
+		/// when item did not exist
+		return false
+	}
+	// new object creation to avaoid mutating the original object, though can accidentally overwrite protected fields
+	cart[index] = { ...cart[index], ...newValues }
+
+	return true
+}
+
 
 export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue, removeFromCart, editCart }
