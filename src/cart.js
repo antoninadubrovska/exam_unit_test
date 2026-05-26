@@ -12,7 +12,7 @@ Tips:
 // function getItem(index) // 1 out of 4
 // function getTotalCartValue() // 1 out of 4
 // function addToCart(newItem) // was partially done ..
-// function removeFromCart(itemId) // mutation
+// function removeFromCart(itemId) // mutation - done , returnes boolean, test both: return value + state change
 // function editCart(itemId, newValues) // mutation
 // function clearCart() // done
 // -------------------------------------------------- //
@@ -85,4 +85,4 @@ function removeFromCart(itemId) {
 }
 
 
-export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue, removeFromCart }
+export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue, removeFromCart, editCart }
