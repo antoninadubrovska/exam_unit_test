@@ -94,8 +94,10 @@ describe('Cart', () => {
 
 		addToCart(product)
 
-		removeFromCart(2002)
+		// test both: return value + state change
+		const result = removeFromCart(2002)
 
+		expect(result).toBe(true)
 		expect(getCartItemCount()).toBe(0)
 	})
 	// -------------------------------------------------- //

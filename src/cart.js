@@ -73,7 +73,16 @@ function getTotalCartValue() {
 	}, 0)
 }
 
-
+function removeFromCart(itemId) {
+	const index = cart.findIndex(cartItem => cartItem.id === itemId)
+	if (index === -1) {
+		/// when item did not exist
+		return false
+	}
+	cart.splice(index, 1)
+	// when item existed
+	return true
+}
 
 
 export { getCartItemCount, addToCart, clearCart, getItem, getTotalCartValue, removeFromCart }
